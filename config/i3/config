@@ -119,10 +119,13 @@ bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
 # put workspaces on specific screens
+workspace 2 output HDMI-0
 workspace 3 output DP-0
 workspace 10 output DP-0
 
 # assign programs to launch onto certain workspaces
+assign [class="hydrogen"] 2
+assign [class="lmms"] 2
 assign [class="firefox"] 3
 assign [class="KeePassXC"] 10
 assign [class="Signal"] 10
