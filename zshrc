@@ -55,6 +55,7 @@ export TERM=alacritty
 export WINEPREFIX=/home/jam/wine
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
+source /home/jam/.config/nnn/config
 [[ -f /home/jam/.zsh_aliases ]] && source /home/jam/.zsh_aliases
 
 ## key bindings
