@@ -78,6 +78,7 @@ map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 let mapleader = ","
 
 " basic quality of life improvements
+set encoding=utf-8
 set number
 set relativenumber
 set ignorecase
