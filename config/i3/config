@@ -119,6 +119,7 @@ bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
 # put workspaces on specific screens
+workspace 1 output HDMI-0
 workspace 2 output HDMI-0
 workspace 3 output DP-0
 workspace 10 output DP-0

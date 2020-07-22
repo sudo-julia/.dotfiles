@@ -47,7 +47,6 @@ PROMPT='%B%F{#E2D2F9}%n %2~ >> %f%b%(?..%F{red}[%?]%f) '
 RPROMPT='[%*]'
 
 ## evals/exports/sources
-#eval "$(hub alias -s)"
 export EDITOR=/usr/bin/vim
 export GOPATH=/home/jam/Programming/Go
 export PATH=/home/jam/bin:/home/jam/.cargo/bin:/home/jam/.local/bin:$PATH
@@ -55,7 +54,6 @@ export TERM=alacritty
 export WINEPREFIX=/home/jam/wine
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
-source /home/jam/.config/nnn/config
 [[ -f /home/jam/.zsh_aliases ]] && source /home/jam/.zsh_aliases
 
 ## key bindings
@@ -83,27 +81,6 @@ mkcd ()
     mkdir -p -- "$1" &&
     cd -P -- "$1"
 }
-
-# make backup of config file with menu if no arg is given
-# TODO use shift to operate on as many args as given
-mkbak ()
-{
-    if [ $# -eq 0 ]; then
-	backup=$(readlink -m ~/.config/*/* | grep -Evi 'chromium|usr' | fzf)
-	if [ "$backup" = '' ]; then
-	    (exit 1)
-	else
-	    while [ -n "$1" ]; do
-		cp -a -- "$1" "$1.bak"
-		shift
-		done
-	fi
-    else
-	cp -a -- "$@" "$@.bak"
-    fi
-}
-
-# update all pip packages
 
 ## plugin management with zinit for speed
 source ~/.zinit/bin/zinit.zsh

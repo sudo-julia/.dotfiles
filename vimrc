@@ -18,6 +18,7 @@ Plugin 'junegunn/fzf'
 Plugin 'tpope/vim-speeddating'
 Plugin 'Konfekt/vim-CtrlXA'
 Plugin 'JuliaEditorSupport/julia-vim'
+Plugin 'rust-lang/rust.vim'
 
 " plugins must be added before the following line
 call vundle#end()            " required
