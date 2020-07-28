@@ -9,16 +9,18 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " add plugins here
+Plugin 'ycm-core/YouCompleteMe'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'nvie/vim-flake8'
-Plugin 'ycm-core/YouCompleteMe'
 Plugin 'hdima/python-syntax'
 Plugin 'arzg/vim-sh'
 Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
 Plugin 'tpope/vim-speeddating'
 Plugin 'Konfekt/vim-CtrlXA'
 Plugin 'JuliaEditorSupport/julia-vim'
 Plugin 'rust-lang/rust.vim'
+Plugin 'fatih/vim-go'
 
 " plugins must be added before the following line
 call vundle#end()            " required
@@ -80,13 +82,14 @@ let mapleader = ","
 
 " basic quality of life improvements
 set encoding=utf-8
+set ignorecase
 set number
 set relativenumber
-set ignorecase
-set smartcase
 set ruler
-set wildmenu
+set smartcase
 set so=2
+set spell
+set wildmenu
 imap jk <Esc>
 
 " make code look pretty
@@ -101,8 +104,6 @@ let @u="ddggPr*"
 nnoremap u<C-U> @u
 
 autocmd FileType bash setlocal shiftwidth=4 softtabstop=4 expandtab
-autocmd FileType text setlocal spell
-autocmd FileType markdown setlocal spell
 
 " gruvbox settings
 "let g:gruvbox_ is syntax

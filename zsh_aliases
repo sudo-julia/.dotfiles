@@ -27,6 +27,7 @@ alias mount='mount | column -t'
 alias n='nnn -c -x'
 alias pydoc=pydoc3
 alias py=python3
+alias rm='rm -I'
 alias sc='shellcheck'
 alias t='vim ~/.TODO.txt'
 alias u='sudo u'
