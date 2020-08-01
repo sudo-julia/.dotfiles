@@ -47,6 +47,7 @@ PROMPT='%B%F{#E2D2F9}%n %2~ >> %f%b%(?..%F{red}[%?]%f) '
 RPROMPT='[%*]'
 
 ## evals/exports/sources
+export BROWSER=/usr/bin/firefox
 export EDITOR=/usr/bin/vim
 export GOPATH=/home/jam/Programming/Go
 export PATH=/home/jam/bin:/home/jam/.cargo/bin:/home/jam/.local/bin:$GOPATH/bin:$PATH

@@ -10,17 +10,18 @@ Plugin 'gmarik/Vundle.vim'
 
 " add plugins here
 Plugin 'ycm-core/YouCompleteMe'
-Plugin 'vim-syntastic/syntastic'
-Plugin 'nvie/vim-flake8'
-Plugin 'hdima/python-syntax'
-Plugin 'arzg/vim-sh'
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
 Plugin 'tpope/vim-speeddating'
 Plugin 'Konfekt/vim-CtrlXA'
+Plugin 'vim-syntastic/syntastic'
+Plugin 'nvie/vim-flake8'
+Plugin 'hdima/python-syntax'
+Plugin 'arzg/vim-sh'
 Plugin 'JuliaEditorSupport/julia-vim'
 Plugin 'rust-lang/rust.vim'
 Plugin 'fatih/vim-go'
+Plugin 'sheerun/vim-polyglot'
 
 " plugins must be added before the following line
 call vundle#end()            " required
@@ -108,4 +109,5 @@ autocmd FileType bash setlocal shiftwidth=4 softtabstop=4 expandtab
 " gruvbox settings
 "let g:gruvbox_ is syntax
 autocmd vimenter * colorscheme gruvbox
+
 set background=dark
