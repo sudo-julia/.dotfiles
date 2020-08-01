@@ -8,20 +8,23 @@ call vundle#begin()
 " set vundle to manage self
 Plugin 'gmarik/Vundle.vim'
 
-" add plugins here
-Plugin 'ycm-core/YouCompleteMe'
+" plugins with vundle
+"" functionality
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
-Plugin 'tpope/vim-speeddating'
-Plugin 'Konfekt/vim-CtrlXA'
 Plugin 'vim-syntastic/syntastic'
-Plugin 'nvie/vim-flake8'
+Plugin 'Konfekt/vim-CtrlXA'
+Plugin 'sheerun/vim-polyglot'
+Plugin 'tpope/vim-speeddating'
+Plugin 'ycm-core/YouCompleteMe'
+
+"" language specific
+Plugin 'psf/black'
 Plugin 'hdima/python-syntax'
-Plugin 'arzg/vim-sh'
 Plugin 'JuliaEditorSupport/julia-vim'
 Plugin 'rust-lang/rust.vim'
 Plugin 'fatih/vim-go'
-Plugin 'sheerun/vim-polyglot'
+Plugin 'arzg/vim-sh'
 
 " plugins must be added before the following line
 call vundle#end()            " required
@@ -51,7 +54,7 @@ au BufNewFile,BufRead *.py
     \ set tabstop=4
     \ | set softtabstop=4
     \ | set shiftwidth=4
-    \ | set textwidth=79
+    \ | set textwidth=88
     \ | set expandtab
     \ | set autoindent
     \ | set fileformat=unix
@@ -77,8 +80,6 @@ let g:ycm_clangd_binary_path = "/usr/bin/clangd"
 
 " map 'g' to define when paired with leader key
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
-
-" set leader key to space
 let mapleader = ","
 
 " basic quality of life improvements
@@ -91,11 +92,13 @@ set smartcase
 set so=2
 set spell
 set wildmenu
+syntax on
+
+" mappings
 imap jk <Esc>
 
 " make code look pretty
 let python_highlight_all=1
-syntax on
 nnoremap <F4> set hlsearch! hlsearch?<CR>
 
 " macros for marking items in todo list
@@ -107,7 +110,6 @@ nnoremap u<C-U> @u
 autocmd FileType bash setlocal shiftwidth=4 softtabstop=4 expandtab
 
 " gruvbox settings
-"let g:gruvbox_ is syntax
 autocmd vimenter * colorscheme gruvbox
 
 set background=dark
