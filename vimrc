@@ -4,12 +4,8 @@ filetype off                  " required
 " set the runtime path to include vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-
-" set vundle to manage self
 Plugin 'gmarik/Vundle.vim'
-
-" plugins with vundle
-"" functionality
+Plugin 'psf/black'
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
 Plugin 'vim-syntastic/syntastic'
@@ -18,16 +14,19 @@ Plugin 'sheerun/vim-polyglot'
 Plugin 'tpope/vim-speeddating'
 Plugin 'ycm-core/YouCompleteMe'
 
-"" language specific
-Plugin 'psf/black'
-Plugin 'hdima/python-syntax'
-Plugin 'JuliaEditorSupport/julia-vim'
-Plugin 'rust-lang/rust.vim'
-Plugin 'fatih/vim-go'
-Plugin 'arzg/vim-sh'
-
 " plugins must be added before the following line
 call vundle#end()            " required
+filetype plugin indent on
+
+" settings for polyglot
+"" i3config.vim
+aug i3_ft_detection
+	au!
+	au BufNewFile,BufRead ~/.config/i3/config set filetype=i3config
+aug end
+
+"" python-syntax
+let g:python_highlight_all=1
 
 " settings for syntastic
 let g:syntastic_always_populate_loc_list = 1
@@ -96,10 +95,8 @@ syntax on
 
 " mappings
 imap jk <Esc>
-
-" make code look pretty
-let python_highlight_all=1
 nnoremap <F4> set hlsearch! hlsearch?<CR>
+nnoremap <F9> :Black<CR>
 
 " macros for marking items in todo list
 let @d="ddGprX''"
@@ -108,6 +105,7 @@ let @u="ddggPr*"
 nnoremap u<C-U> @u
 
 autocmd FileType bash setlocal shiftwidth=4 softtabstop=4 expandtab
+autocmd BufWritePre *.py execute ':Black'
 
 " gruvbox settings
 autocmd vimenter * colorscheme gruvbox
