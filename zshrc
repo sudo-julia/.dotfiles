@@ -46,13 +46,8 @@ PROMPT='%B%F{#E2D2F9}%n %2~ >> %f%b%(?..%F{red}[%?]%f) '
 #RPROMPT="$vcs_info_msg_0_ [%*]"
 RPROMPT='[%*]'
 
-## evals/exports/sources
-export BROWSER=/usr/bin/firefox
-export EDITOR=/usr/bin/vim
-export GOPATH=/home/jam/Programming/Go
+## evals/sources
 export PATH=/home/jam/bin:/home/jam/.cargo/bin:/home/jam/.local/bin:$GOPATH/bin:$PATH
-export TERM=alacritty
-export WINEPREFIX=/home/jam/wine
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
 [[ -f /home/jam/.zsh_aliases ]] && source /home/jam/.zsh_aliases
@@ -96,4 +91,3 @@ zinit light wookayin/fzf-fasd
 zinit wait lucid for \
     OMZ::plugins/fasd/fasd.plugin.zsh \
     OMZ::plugins/colored-man-pages/colored-man-pages.plugin.zsh
-
