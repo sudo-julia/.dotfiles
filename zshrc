@@ -27,18 +27,18 @@ unsetopt beep
 
 ## prompt
 # grab git branch
-parse_git_branch () {
-    [ "$PWD" = "$HOME" ] && return
-    ref="$(command git symbolic-ref --short HEAD 2> /dev/null)" || return
-    echo " [$ref]"
-}
+#parse_git_branch () {
+#    [ "$PWD" = "$HOME" ] && return
+#    ref="$(command git symbolic-ref --short HEAD 2> /dev/null)" || return
+#    echo " [$ref]"
+#}
 
 # git vcs on prompt
-autoload -Uz vcs_info
-precmd_vcs_info() { vcs_info }
-precmd_functions+=( precmd_vcs_info )
-setopt prompt_subst
-zstyle ':vcs_info:git:*' formats '%F{#FBD588}%B%b%%b%f'
+#autoload -Uz vcs_info
+#precmd_vcs_info() { vcs_info }
+#precmd_functions+=( precmd_vcs_info )
+#setopt prompt_subst
+#zstyle ':vcs_info:git:*' formats '%F{#FBD588}%B%b%%b%f'
 
 # actual prompts
 PROMPT='%B%F{#E2D2F9}%n %2~ >> %f%b%(?..%F{red}[%?]%f) '
