@@ -99,10 +99,10 @@ nnoremap <F4> set hlsearch! hlsearch?<CR>
 nnoremap <F9> :Black<CR>
 
 " macros for marking items in todo list
-let @d="ddGprX''"
-nnoremap d<C-D> @d
+let @d="ddGprX"
+nnoremap d<C-D> @dA<C-R>=strftime(" <%d-%m-%y>")<CR><Esc>''
 let @u="ddggPr*"
-nnoremap u<C-U> @u
+nnoremap u<C-U> @uf<hD0
 
 autocmd FileType bash setlocal shiftwidth=4 softtabstop=4 expandtab
 autocmd BufWritePre *.py execute ':Black'

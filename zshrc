@@ -18,8 +18,8 @@ promptinit
 
 ## history settings
 HISTFILE=~/.zsh_history
-HISTSIZE=15000
-SAVEHIST=15000
+HISTSIZE=20000
+SAVEHIST=20000
 
 ## misc setopt(s)
 setopt autocd extendedglob COMPLETE_ALIASES NO_CASE_GLOB
