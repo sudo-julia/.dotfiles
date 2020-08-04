@@ -70,13 +70,13 @@ bindsym $mod+a focus parent
 set $ws1 "work"
 set $ws2 "fun"
 set $ws3 "ff"
-set $ws4 "4"
+set $ws4 "alt"
 set $ws5 "5"
 set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
 set $ws9 "cal"
-set $ws10 "com"
+set $ws10 "comm"
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -112,6 +112,7 @@ workspace comm output DP-0
 # assign programs to launch onto certain workspaces
 assign [class="hydrogen"] fun
 assign [class="lmms"] fun
+assign [class="Steam"] fun
 assign [class="firefox"] ff
 # TODO find a way to put calcurse on 9 exclusively
 assign [class="KeePassXC"] comm
@@ -186,3 +187,7 @@ focus_follows_mouse no
 # Programs to run at startup
 exec --no-startup-id numlockx
 exec --no-startup-id $HOME/bin/displayCheck.sh
+exec calcurse --daemon
+exec firefox
+exec signal-desktop
+exec keepassxc
