@@ -11,7 +11,7 @@ zstyle ':completion:*' squeeze-slashes true
 zstyle ':completion:*' verbose true
 zstyle ':completion:*' list-colors "${(@s.:.)LS_COLORS}"
 zstyle ':completion::complete:*' gain-privileges 1
-zstyle :compinstall filename '/home/jam/.zshrc'
+zstyle :compinstall filename '"$HOME"/.zshrc'
 autoload -Uz compinit promptinit
 compinit
 promptinit
@@ -47,10 +47,10 @@ PROMPT='%B%F{#E2D2F9}%n %2~ >> %f%b%(?..%F{red}[%?]%f) '
 RPROMPT='[%*]'
 
 ## evals/sources
-export PATH=/home/jam/bin:/home/jam/.cargo/bin:/home/jam/.local/bin:$GOPATH/bin:$PATH
+export PATH="$HOME"/bin:"$HOME"/.cargo/bin:"$HOME"/.local/bin:$GOPATH/bin:$PATH
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
-[[ -f /home/jam/.zsh_aliases ]] && source /home/jam/.zsh_aliases
+[[ -f "$HOME"/.zsh_aliases ]] && source "$HOME"/.zsh_aliases
 
 ## key bindings
 # editor mode

@@ -1,1 +1,1 @@
-## ~ my dots ~
+## ~ utility scripts i made ~
