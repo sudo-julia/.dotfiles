@@ -71,7 +71,7 @@ set $ws1 "work"
 set $ws2 "fun"
 set $ws3 "ff"
 set $ws4 "alt"
-set $ws5 "5"
+set $ws5 "vbox"
 set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
@@ -105,6 +105,7 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 # put workspaces on specific screens
 workspace work output HDMI-0 DP-0
 workspace fun output HDMI-0 DP-0
+workspace vbox output HDMI-0 DP-0
 workspace ff output DP-0
 workspace cal output DP-0
 workspace comm output DP-0
@@ -114,6 +115,7 @@ assign [class="hydrogen"] fun
 assign [class="lmms"] fun
 assign [class="Steam"] fun
 assign [class="firefox"] ff
+assign [class="VirtualBox Manager"] vbox
 # TODO find a way to put calcurse on 9 exclusively
 assign [class="KeePassXC"] comm
 assign [class="Signal"] comm
@@ -189,5 +191,5 @@ exec --no-startup-id numlockx
 exec --no-startup-id $HOME/bin/displayCheck.sh
 exec calcurse --daemon
 exec firefox
-exec signal-desktop
 exec keepassxc
+exec signal-desktop
