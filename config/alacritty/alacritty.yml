@@ -106,18 +106,6 @@ colors:
     background: '0x282828'
     foreground: '0xfff4e1'
 
-  # bold colors
-  bright:
-    black:   '0x515151'
-    red:     '0xbf6382'
-    green:   '0x65a446'
-    yellow:  '0xffc44d'
-    blue:    '0x6b85c2'
-    magenta: '0x9e6bb8'
-    cyan:    '0x66cbaa'
-    white:   '0x919191'
-
-  # normal colors
   normal:
     black:   '0x707172'
     red:     '0xf899b9'
@@ -127,6 +115,17 @@ colors:
     magenta: '0xe2d2f9'
     cyan:    '0xaaf4db'
     white:   '0xeaeaea'
+
+  bright:
+    black:   '0x5d5d5d'
+    red:     '0xf96f9d'
+    green:   '0x85d45d'
+    yellow:  '0xffc144'
+    blue:    '0x7da1f5'
+    magenta: '0xce7ef8'
+    cyan:    '0x76ebc5'
+    white:   '0xfff8ec'
+
 
 # Visual Bell
 #

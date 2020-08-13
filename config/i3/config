@@ -173,7 +173,7 @@ bindsym $mod+c exec alacritty -e calcurse
 bindsym $mod+Shift+p exec --no-startup-id $HOME/bin/screenshot.sh
 
 # Lock screen
-bindsym $mod+Shift+o exec --no-startup-id i3lock-fancy-dualmonitor -f CozetteVector
+bindsym $mod+Shift+o exec --no-startup-id i3lock-fancy-dualmonitor -f Source-Code-Pro
 
 # Gaps / rounded settings
 for_window [class=".*"] border pixel 0
