@@ -78,8 +78,8 @@ let g:ycm_autoclose_preview_window_after_completion=1
 let g:ycm_clangd_binary_path = "/usr/bin/clangd"
 
 " map 'g' to define when paired with leader key
-map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 let mapleader = ","
+map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 " basic quality of life improvements
 set encoding=utf-8
