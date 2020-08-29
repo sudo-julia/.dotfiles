@@ -100,7 +100,7 @@ nnoremap <F9> :Black<CR>
 
 " macros for marking items in todo list
 let @d="ddGprX"
-nnoremap d<C-D> @dA<C-R>=strftime(" <%d-%m-%y>")<CR><Esc>''
+nnoremap d<C-D> @dA<C-R>=strftime(" <%y-%m-%d>")<CR><Esc>''
 let @u="ddggPr*"
 nnoremap u<C-U> @uf<hD0
 

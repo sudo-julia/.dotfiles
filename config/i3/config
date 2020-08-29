@@ -113,6 +113,7 @@ workspace comm output DP-0
 # assign programs to launch onto certain workspaces
 assign [class="hydrogen"] fun
 assign [class="lmms"] fun
+assign [class="lutris"] fun
 assign [class="Steam"] fun
 assign [class="firefox"] ff
 assign [class="VirtualBox Manager"] vbox
