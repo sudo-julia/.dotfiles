@@ -68,13 +68,13 @@ bindsym $mod+a focus parent
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "work"
-set $ws2 "fun"
-set $ws3 "ff"
+set $ws2 "games"
+set $ws3 "music"
 set $ws4 "alt"
 set $ws5 "vbox"
-set $ws6 "6"
-set $ws7 "7"
-set $ws8 "8"
+set $ws6 "ff"
+set $ws7 "seven"
+set $ws8 "eight"
 set $ws9 "cal"
 set $ws10 "comm"
 
@@ -104,19 +104,23 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 
 # put workspaces on specific screens
 workspace work output HDMI-0 DP-0
-workspace fun output HDMI-0 DP-0
+workspace games output HDMI-0 DP-0
+workspace music output HDMI-0 DP-0
+workspace alt output HDMI-0 DP-0
 workspace vbox output HDMI-0 DP-0
 workspace ff output DP-0
+workspace seven output DP-0
+workspace eight output DP-0
 workspace cal output DP-0
 workspace comm output DP-0
 
 # assign programs to launch onto certain workspaces
-assign [class="hydrogen"] fun
-assign [class="lmms"] fun
-assign [class="lutris"] fun
-assign [class="Steam"] fun
-assign [class="firefox"] ff
+assign [class="hydrogen"] music
+assign [class="lmms"] music
+assign [class="lutris"] games
+assign [class="Steam"] games
 assign [class="VirtualBox Manager"] vbox
+assign [class="firefox"] ff
 # TODO find a way to put calcurse on 9 exclusively
 assign [class="KeePassXC"] comm
 assign [class="Signal"] comm
@@ -179,9 +183,8 @@ bindsym $mod+Shift+o exec --no-startup-id i3lock-fancy-dualmonitor -f Source-Cod
 # Gaps / rounded settings
 for_window [class=".*"] border pixel 0
 gaps inner 5
-gaps outer 5
-#smart_gaps on
-border_radius 4
+gaps outer 1
+smart_gaps on
 
 # Kill the cursor!
 exec --no-startup-id unclutter 4

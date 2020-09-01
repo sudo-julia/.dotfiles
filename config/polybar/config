@@ -40,7 +40,7 @@ height = 26
 ;bottom = true
 ;offset-x = 1%
 ;offset-y = 1%
-radius = 8.0
+radius = 0.0
 fixed-center = true
 
 background = ${colors.background}
@@ -53,7 +53,7 @@ border-size = 4
 border-color = #00000000
 
 padding-left = 0
-padding-right = 3
+padding-right = 1
 
 module-margin-left = 1
 module-margin-right = 3
