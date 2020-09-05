@@ -119,6 +119,7 @@ assign [class="hydrogen"] music
 assign [class="lmms"] music
 assign [class="lutris"] games
 assign [class="Steam"] games
+assign [class="bethesda.net_launcher.exe"] games
 assign [class="VirtualBox Manager"] vbox
 assign [class="firefox"] ff
 # TODO find a way to put calcurse on 9 exclusively
@@ -178,7 +179,7 @@ bindsym $mod+c exec alacritty -e calcurse
 bindsym $mod+Shift+p exec --no-startup-id $HOME/bin/screenshot.sh
 
 # Lock screen
-bindsym $mod+Shift+o exec --no-startup-id i3lock-fancy-dualmonitor -f Source-Code-Pro
+bindsym $mod+Shift+o exec --no-startup-id i3lock-fancy-dualmonitor -p -f Source-Code-Pro
 
 # Gaps / rounded settings
 for_window [class=".*"] border pixel 0
