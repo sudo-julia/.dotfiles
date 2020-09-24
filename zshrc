@@ -1,3 +1,9 @@
+#                    |
+#          _  /  __| __ \   __| __|
+#            / \__ \ | | | |   (
+#          ___|____/_| |_|_|  \___|
+#                                     
+#
 ## completion options
 zstyle ':completion:*' completer _expand _complete _ignored _approximate
 zstyle ':completion:*' insert-unambiguous true

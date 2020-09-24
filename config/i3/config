@@ -181,11 +181,18 @@ bindsym $mod+Shift+p exec --no-startup-id $HOME/bin/screenshot.sh
 # Lock screen
 bindsym $mod+Shift+o exec --no-startup-id i3lock-fancy-dualmonitor -p -f Source-Code-Pro
 
-# Gaps / rounded settings
-for_window [class=".*"] border pixel 0
+# Gaps
 gaps inner 5
 gaps outer 1
 smart_gaps on
+
+# Border settings
+for_window [class=".*"] border pixel 2
+#client.focused  #fbd588 #285577 #ffffff #2e9ef4 #285577
+# class                  border  backgr. text    indicator  child_border
+client.focused           #fbd588 #fbd588 #ffffff #fbd588    #ffc144
+client.focused_inactive  #4c7899 #285577 #ffffff #2e9ef4    #fbd588
+client.unfocused         #fbd588 #fbd588 #ffffff #fbd588    #707172
 
 # Kill the cursor!
 exec --no-startup-id unclutter 4
@@ -193,7 +200,7 @@ focus_follows_mouse no
 
 # Programs to run at startup
 exec --no-startup-id numlockx
-exec --no-startup-id $HOME/bin/displayCheck.sh
+exec --no-startup-id $HOME/bin/displayCheck.bash
 exec calcurse --daemon
 exec firefox
 exec keepassxc
