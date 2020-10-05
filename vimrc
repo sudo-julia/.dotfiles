@@ -99,11 +99,17 @@ imap jk <Esc>
 nnoremap <F4> set hlsearch! hlsearch?<CR>
 nnoremap <F9> :Black<CR>
 
-" macros for marking items in todo list
+"" macros for marking items in todo list
+" mark item as done
 let @d="ddGprX"
 nnoremap d<C-D> @dA<C-R>=strftime(" <%Y-%m-%d>")<CR><Esc>''
+" unmark item as done
 let @u="ddggPr*"
 nnoremap u<C-U> @uf<hD0
+" new active item
+let @a="O! "
+" new inactive item
+let @n="O* "
 
 autocmd FileType bash setlocal shiftwidth=4 softtabstop=4 expandtab
 autocmd BufWritePre *.py execute ':Black'

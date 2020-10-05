@@ -34,8 +34,8 @@ unsetopt beep
 # actual prompts
 #PROMPT='%B%F{#E2D2F9}%n %2~ >> %f%b%(?..%F{red}[%?]%f) '
 PROMPT='%B%F{magenta}%n %2~%f%b %F{red}❥ %(?..[%?])%f '
-#PROMPT='%B%F{#E2D2F9}%n %2~%f%b %(?.%F{#E2D2F9}❥ %f.%F{red}❥ %? %f) '
-## ^^ this works for conditional heart coloring BUT makes everything slowwww
+#PROMPT='%B%F{magenta}% %2~%f%b %F{red}❥ %(?..[%?])%f '
+## ^^^^ no name
 
 RPROMPT='[%*]'
 
