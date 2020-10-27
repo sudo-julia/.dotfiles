@@ -6,6 +6,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'psf/black'
+Plugin 'nvie/vim-flake8'
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
 Plugin 'vim-syntastic/syntastic'
@@ -96,6 +97,7 @@ syntax on
 
 " mappings
 imap jk <Esc>
+nmap <CR> :FZF<CR>
 nnoremap <F4> set hlsearch! hlsearch?<CR>
 nnoremap <F9> :Black<CR>
 
@@ -112,7 +114,7 @@ let @a="O! "
 let @n="O* "
 
 autocmd FileType bash setlocal shiftwidth=4 softtabstop=4 expandtab
-autocmd BufWritePre *.py execute ':Black'
+"autocmd BufWritePre *.py execute ':Black'
 
 " gruvbox settings
 autocmd vimenter * colorscheme gruvbox

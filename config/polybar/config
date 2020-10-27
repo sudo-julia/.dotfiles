@@ -60,7 +60,7 @@ font-2 = wuncon siji:pixelsize=10;1
 
 modules-left = i3 pac-updates
 modules-center = mullvad-status todo-checks 
-modules-right = xbacklight alsa memory cpu temperature eth date 
+modules-right = battery xbacklight alsa memory cpu temperature eth date 
 ;modules-right = xbacklight alsa date 
 
 ; hiding system tray
