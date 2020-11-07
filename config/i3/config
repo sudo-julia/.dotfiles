@@ -159,10 +159,10 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # Change brightness
-bindsym $mod+Shift+Left exec --no-startup-id $HOME/bin/brightDown.sh
-bindsym $mod+Shift+Right exec --no-startup-id $HOME/bin/brightUp.sh
-bindsym $mod+Shift+Up exec --no-startup-id $HOME/bin/brightLimits.zsh --max
-bindsym $mod+Shift+Down exec --no-startup-id $HOME/bin/brightLimits.zsh --min
+bindsym $mod+Shift+Left exec --no-startup-id $HOME/bin/changeBright.zsh --lower
+bindsym $mod+Shift+Right exec --no-startup-id $HOME/bin/changeBright.zsh --raise
+bindsym $mod+Shift+Down exec --no-startup-id $HOME/bin/changeBright.zsh --min
+bindsym $mod+Shift+Up exec --no-startup-id $HOME/bin/changeBright.zsh --max
 
 # Change volume
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer set Master 5%+
