@@ -32,6 +32,7 @@ setopt autocd extendedglob COMPLETE_ALIASES NO_CASE_GLOB
 unsetopt beep
 
 # actual prompts
+# TODO make timestamp only appear on sent commands
 #PROMPT='%B%F{#E2D2F9}%n %2~ >> %f%b%(?..%F{red}[%?]%f) '
 PROMPT='%B%F{magenta}%n %2~%f%b %F{red}❥ %(?..[%?])%f '
 #PROMPT='%B%F{magenta}% %2~%f%b %F{red}❥ %(?..[%?])%f '
