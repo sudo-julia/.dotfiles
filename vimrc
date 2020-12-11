@@ -5,7 +5,6 @@ filetype off                  " required
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
-Plugin 'psf/black'
 Plugin 'nvie/vim-flake8'
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'

@@ -72,6 +72,17 @@ mkcd ()
     cd -P -- "$1"
 }
 
+# record the current window with `giph`
+recordWindow ()
+{
+	video_dir=/home/jam/videos/giph
+	if [[ "${1}" ]]; then
+		giph -w "${WINDOWID}" "${video_dir}/${1}" &
+	else
+		giph -w "${WINDOWID}" "${video_dir}/$( date '+%Y-%m-%dT%H:%M:%S' )" &
+	fi
+}
+
 ## plugin management with zinit for speed
 source ~/.zinit/bin/zinit.zsh
 autoload -Uz _zinit
