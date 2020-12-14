@@ -24,8 +24,8 @@ promptinit
 
 ## history settings
 HISTFILE=~/.zsh_history
-HISTSIZE=20000
-SAVEHIST=20000
+HISTSIZE=15000
+SAVEHIST=15000
 
 ## misc setopt(s)
 setopt autocd extendedglob COMPLETE_ALIASES NO_CASE_GLOB
@@ -72,14 +72,14 @@ mkcd ()
     cd -P -- "$1"
 }
 
-# record the current window with `giph`
+# record a window with `giph`, passing it the $WINDOWID
 recordWindow ()
 {
 	video_dir=/home/jam/videos/giph
-	if [[ "${1}" ]]; then
-		giph -w "${WINDOWID}" "${video_dir}/${1}" &
+	if (( $# = 2 )); then
+		giph -w "${1}" "${video_dir}/${2}"
 	else
-		giph -w "${WINDOWID}" "${video_dir}/$( date '+%Y-%m-%dT%H:%M:%S' )" &
+		giph -w "${1}" "${video_dir}/$( date '+%Y-%m-%dT%H:%M:%S' )"
 	fi
 }
 
