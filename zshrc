@@ -93,6 +93,6 @@ zinit light zsh-users/zsh-autosuggestions
 zinit light zdharma/fast-syntax-highlighting
 zinit light wookayin/fzf-fasd
 
+    # OMZ::plugins/fasd/fasd.plugin.zsh \
 zinit wait lucid for \
-    OMZ::plugins/fasd/fasd.plugin.zsh \
     OMZ::plugins/colored-man-pages/colored-man-pages.plugin.zsh \

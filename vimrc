@@ -101,16 +101,17 @@ nnoremap <F4> set hlsearch! hlsearch?<CR>
 nnoremap <F9> :Black<CR>
 
 "" macros for marking items in todo list
+" TODO remove the active tag with search() and logic
 " mark item as done
-let @d="ddGprX"
+let @d="ddGpf\<Space>;rX"
 nnoremap d<C-D> @dA<C-R>=strftime(" <%Y-%m-%d>")<CR><Esc>''
 " unmark item as done
-let @u="ddggPr*"
+let @u="ddggPfXr\<Space>"
 nnoremap u<C-U> @uf<hD0
-" new active item
-let @a="O! "
 " new inactive item
-let @n="O* "
+let @n="O- [ ] "
+" new active item
+let @a="@n<!--a-->\<Esc>Bi"
 
 autocmd FileType bash setlocal shiftwidth=4 softtabstop=4 expandtab
 "autocmd BufWritePre *.py execute ':Black'
