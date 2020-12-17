@@ -1,21 +1,19 @@
 set nocompatible              " required
 filetype off                  " required
 
-" set the runtime path to include vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'gmarik/Vundle.vim'
-Plugin 'nvie/vim-flake8'
-Plugin 'junegunn/fzf'
-Plugin 'junegunn/fzf.vim'
-Plugin 'vim-syntastic/syntastic'
-Plugin 'Konfekt/vim-CtrlXA'
-Plugin 'sheerun/vim-polyglot'
-Plugin 'tpope/vim-speeddating'
-Plugin 'ycm-core/YouCompleteMe'
+call plug#begin('~/.vim/plugged')
+Plug 'gmarik/Vundle.vim'
+Plug 'nvie/vim-flake8'
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
+Plug 'AndrewRadev/tagalong.vim'
+Plug 'vim-syntastic/syntastic'
+Plug 'Konfekt/vim-CtrlXA'
+Plug 'sheerun/vim-polyglot'
+Plug 'tpope/vim-speeddating'
+Plug 'ycm-core/YouCompleteMe'
 
-" plugins must be added before the following line
-call vundle#end()            " required
+call plug#end()
 filetype plugin indent on
 
 " settings for polyglot
