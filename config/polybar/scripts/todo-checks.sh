@@ -1,7 +1,8 @@
 #!/usr/bin/bash
+# puts number of items in markdown todo list in polybar
 
 newestMod=$( stat -c "%Y" ~/.TODO.md )
-lastEdit=$( cat ~/.TODO.last )
+lastMod=$( cat ~/.TODO.last )
 
 updateModule () {
 	echo "$newestMod" > ~/.TODO.last
@@ -25,7 +26,7 @@ updateModule () {
 	fi
 }
 
-if [[ "$newestMod" -gt "$lastEdit" ]]; then
+if [[ "$newestMod" -gt "$lastMod" ]]; then
 	updateModule
 else
 	exit 0

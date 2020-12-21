@@ -89,10 +89,11 @@ autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 
 # plugins
-zinit light zsh-users/zsh-autosuggestions
-zinit light zdharma/fast-syntax-highlighting
-zinit light wookayin/fzf-fasd
+zinit for \
+	light-mode zsh-users/zsh-autosuggestions \
+	light-mode zdharma/fast-syntax-highlighting \
+	light-mode wookayin/fzf-fasd \
 
-    # OMZ::plugins/fasd/fasd.plugin.zsh \
-zinit wait lucid for \
-    OMZ::plugins/colored-man-pages/colored-man-pages.plugin.zsh \
+zinit wait'2' lucid for \
+    light-mode ael-code/zsh-colored-man-pages \
+    light-mode OMZP::fasd \
