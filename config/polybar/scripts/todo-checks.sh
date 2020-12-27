@@ -28,6 +28,9 @@ updateModule () {
 
 if [[ "$newestMod" -gt "$lastMod" ]]; then
 	updateModule
+elif [[ ! "$TODO_STARTED" ]]; then
+	export TODO_STARTED=1
+	updateModule
 else
 	exit 0
 fi

@@ -105,7 +105,7 @@ nnoremap <F9> :Black<CR>
 let @d="ddGpf\<Space>;rX"
 nnoremap d<C-D> @dA<C-R>=strftime(" <%Y-%m-%d>")<CR><Esc>''
 " unmark item as done
-let @u="ddggPfXr\<Space>"
+let @u="ddggpfXr\<Space>"
 nnoremap u<C-U> @uf<hD0
 " new inactive item
 let @n="O- [ ] "

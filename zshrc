@@ -95,5 +95,5 @@ zinit for \
 	light-mode wookayin/fzf-fasd \
 
 zinit wait'2' lucid for \
-    light-mode ael-code/zsh-colored-man-pages \
     light-mode OMZP::fasd \
+    light-mode ael-code/zsh-colored-man-pages \
