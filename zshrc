@@ -42,6 +42,7 @@ RPROMPT='[%*]'
 
 ## evals/sources
 export PATH="$HOME"/bin:"$HOME"/.cargo/bin:"$HOME"/.local/bin:$GOPATH/bin:$PATH
+source ~/.api_keys
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
 [[ -f "$HOME"/.zsh_aliases ]] && source "$HOME"/.zsh_aliases
@@ -65,16 +66,21 @@ bindkey '^a' beginning-of-line
 bindkey '^e' end-of-line
 
 ## functions
+# use mpv as a webcam for pictures
+camera () {
+	mpv --demuxer-lavf-format=video4linux2 \
+		--demuxer-lavf-o-set=input_format=mjpeg \
+		av://vl42:/dev/video0
+}
+
 # make and change into directory
-mkcd ()
-{
+mkcd () {
     mkdir -p -- "$1" &&
     cd -P -- "$1"
 }
 
 # record a window with `giph`, passing it the $WINDOWID
-recordWindow ()
-{
+recordWindow () {
 	video_dir=/home/jam/videos/giph
 	if (( $# = 2 )); then
 		giph -w "${1}" "${video_dir}/${2}"

@@ -167,13 +167,18 @@ bindsym $mod+Shift+Up exec --no-startup-id $HOME/bin/changeBright.zsh --max
 # Change volume
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer set Master 5%+
 bindsym XF86AudioLowerVolume exec --no-startup-id amixer set Master 5%-
-bindsym XF86AudioMute exec --no-startup-id amixer set Master toggle
+bindsym XF86AudioMicMute exec --no-startup-id amixer set Master toggle
+# rog button below
+# bindsym XF86Launch1 exec --no-startup-id amixer set Master toggle
 
 # Launch todo list
-bindsym $mod+t exec alacritty -e vim $HOME/.TODO.txt
+bindsym $mod+t exec alacritty -e vim $HOME/.TODO.md
 
 # Launch calcurse
 bindsym $mod+c exec alacritty -e calcurse
+
+# Search for/play youtube video
+bindsym $mod+y exec $HOME/programming/sh/myyt/mydyt
 
 # Screenshots
 bindsym $mod+Shift+p exec --no-startup-id $HOME/bin/screenshot.sh
@@ -193,6 +198,7 @@ for_window [class=".*"] border pixel 2
 client.focused           #fbd588 #fbd588 #ffffff #fbd588    #ffc144
 client.focused_inactive  #4c7899 #285577 #ffffff #2e9ef4    #fbd588
 client.unfocused         #fbd588 #fbd588 #ffffff #fbd588    #707172
+client.urgent            #f899b9 #fbd588 #ffffff #fbd588    #707172
 
 # Kill the cursor!
 exec --no-startup-id unclutter 4
