@@ -11,7 +11,7 @@
     alternate-urgent-background: @lightbg;
     lightbg:                     rgba ( 51, 51, 51, 100 % );
     background-color:            rgba ( 0, 0, 0, 0 % );
-    border-color:                @foreground;
+    border-color:                rgba ( 251, 213, 136, 100 % );
     normal-background:           @background;
     selected-urgent-background:  @red;
     alternate-active-background: @lightbg;
@@ -86,7 +86,7 @@ element-icon {
 window {
     padding:          5;
     background-color: @background;
-    border:           1;
+    border:           2;
 }
 mainbox {
     padding: 0;

@@ -3,13 +3,14 @@ filetype off                  " required
 
 call plug#begin('~/.vim/plugged')
 Plug 'gmarik/Vundle.vim'
-Plug 'nvie/vim-flake8'
+Plug 'psf/black', { 'branch': 'stable' }
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'mattn/emmet-vim'
 Plug 'AndrewRadev/tagalong.vim'
 Plug 'vim-syntastic/syntastic'
 Plug 'Konfekt/vim-CtrlXA'
+Plug 'nvie/vim-flake8'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-speeddating'
 Plug 'ycm-core/YouCompleteMe'
@@ -17,12 +18,15 @@ Plug 'ycm-core/YouCompleteMe'
 call plug#end()
 filetype plugin indent on
 
-" settings for polyglot
-"" i3config.vim
+"" settings for polyglot
+" i3config.vim
 aug i3_ft_detection
 	au!
 	au BufNewFile,BufRead ~/.config/i3/config set filetype=i3config
 aug end
+
+"" black
+autocmd BufWritePre *.py execute ':Black'
 
 "" python-syntax
 let g:python_highlight_all=1

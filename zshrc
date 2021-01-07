@@ -35,9 +35,6 @@ unsetopt beep
 # TODO make timestamp only appear on sent commands
 #PROMPT='%B%F{#E2D2F9}%n %2~ >> %f%b%(?..%F{red}[%?]%f) '
 PROMPT='%B%F{magenta}%n %2~%f%b %F{red}❥ %(?..[%?])%f '
-#PROMPT='%B%F{magenta}% %2~%f%b %F{red}❥ %(?..[%?])%f '
-## ^^^^ no name
-
 RPROMPT='[%*]'
 
 ## evals/sources
@@ -77,16 +74,6 @@ camera () {
 mkcd () {
     mkdir -p -- "$1" &&
     cd -P -- "$1"
-}
-
-# record a window with `giph`, passing it the $WINDOWID
-recordWindow () {
-	video_dir=/home/jam/videos/giph
-	if (( $# = 2 )); then
-		giph -w "${1}" "${video_dir}/${2}"
-	else
-		giph -w "${1}" "${video_dir}/$( date '+%Y-%m-%dT%H:%M:%S' )"
-	fi
 }
 
 ## plugin management with zinit for speed

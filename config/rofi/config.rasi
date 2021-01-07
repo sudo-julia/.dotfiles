@@ -1,14 +1,14 @@
 configuration {
-  	modi: "window,run,ssh,dmenu";
-/*	width: 50;*/
+  	modi: "window,run,ssh,drun";
+	width: 40;
 	lines: 20;
-/*	columns: 1;*/
+	columns: 1;
 	font: "Terminus 12";
-/*	bw: 1;*/
+	bw: 1;
 	location: 7;
 	padding: 5;
-/*	yoffset: 0;*/
-/*	xoffset: 0;*/
+	yoffset: -10;
+	xoffset: 10;
 /*	fixed-num-lines: true;*/
 /*	show-icons: false;*/
 	terminal: "alacritty";
@@ -77,13 +77,13 @@ configuration {
 /*	display-combi: ;*/
 /*	display-keys: ;*/
 /*	display-file-browser: ;*/
-/*	kb-primary-paste: "Control+V,Shift+Insert";*/
+	kb-primary-paste: "Control+V,Shift+Insert";
 /*	kb-secondary-paste: "Control+v,Insert";*/
-/*	kb-clear-line: "Control+w";*/
-/*	kb-move-front: "Control+a";*/
-/*	kb-move-end: "Control+e";*/
-/*	kb-move-word-back: "Alt+b,Control+Left";*/
-/*	kb-move-word-forward: "Alt+f,Control+Right";*/
+	kb-clear-line: "Control+w";
+	kb-move-front: "Control+a";
+	kb-move-end: "Control+e";
+	kb-move-word-back: "Alt+b,Control+Left";
+	kb-move-word-forward: "Alt+f,Control+Right";
 /*	kb-move-char-back: "Left,Control+b";*/
 /*	kb-move-char-forward: "Right,Control+f";*/
 /*	kb-remove-word-back: "Control+Alt+h,Control+BackSpace";*/
