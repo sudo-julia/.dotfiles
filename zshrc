@@ -23,7 +23,7 @@ compinit
 promptinit
 
 ## history settings
-HISTFILE=~/.zsh_history
+HISTFILE=~/lib/zsh_history
 HISTSIZE=15000
 SAVEHIST=15000
 

@@ -1,9 +1,18 @@
-export BROWSER=/usr/bin/firefox
-export EDITOR=/usr/bin/vim
-export FZF_COMPLETION_TRIGGER='~~'
-export GOPATH="$HOME"/programming/go
-export MANPAGER=less
-export PATH="$HOME"/bin:"$HOME"/.cargo/bin:"$HOME"/.local/bin:"$HOME"/build/asciicast2gif:$GOPATH/bin:"$HOME"/.poetry/bin:$PATH
-export TERM=alacritty
-export WINEPREFIX="$HOME"/.wine
+export BROWSER="/usr/bin/firefox"
+export EDITOR="/usr/bin/vim"
+export FZF_COMPLETION_TRIGGER="~~"
+export GOPATH="${HOME}/programming/go"
+export HISTFILE="${HOME}/lib"
+export LESSHISTFILE="${HOME}/lib/lesshst"
+export MANPAGER="less"
+export PATH="${HOME}/bin:${HOME}/.cargo/bin:${HOME}/.local/bin:${HOME}/.poetry/bin:${PATH}"
+export PULSE_COOKIE="${HOME}/lib"
+export PYTHONPATH="${HOME}/lib"
+export TERM="alacritty"
+export XAUTHORITY="${HOME}/lib"
+export XDG_CACHE_HOME="${HOME}/.cache"
+export XDG_CONFIG_HOME="${HOME}/.config"
+export XINITRC="${HOME}/lib"
+export WINEPREFIX="${HOME}/.wine"
+export WWW_HOME="${HOME}/.config/w3m"
 tdm

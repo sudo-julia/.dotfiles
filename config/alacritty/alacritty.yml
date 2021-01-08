@@ -29,6 +29,7 @@ font:
 
   bold:
     family: terminus
+    #family: tamzenforpowerline
     style: Bold
 
   italic:
