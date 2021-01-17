@@ -25,16 +25,18 @@ scrolling:
 font:
   normal:
     family: tamzenforpowerline
+    #family: scientifica
     style: Regular
 
   bold:
     family: terminus
+    #family: scientifica
     #family: tamzenforpowerline
     style: Bold
 
   italic:
-    family: hack
-    style: terminus
+    family: scientifica
+    style: Italic
 
   bold_italic:
     family: terminus

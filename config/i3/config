@@ -172,7 +172,7 @@ bindsym XF86AudioMicMute exec --no-startup-id amixer set Master toggle
 bindsym $mod+d exec rofi -show 'drun' -i -matching 'normal' -location '0'
 
 # Launch todo list
-bindsym $mod+t exec alacritty -e vim $HOME/.TODO.md
+bindsym $mod+t exec alacritty -e vim $HOME/lib/TODO.md
 
 # Launch calcurse
 bindsym $mod+c exec alacritty -e calcurse
