@@ -1,6 +1,7 @@
 export BROWSER="/usr/bin/firefox"
 export EDITOR="/usr/bin/vim"
 export ELINKS_CONFDIR="${HOME}/.config/elinks"
+export _FASD_DATA="${HOME}/lib/fasd"
 export FZF_COMPLETION_TRIGGER="~~"
 export GOPATH="${HOME}/programming/go"
 export HISTFILE="${HOME}/lib/zsh_history"

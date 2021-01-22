@@ -39,7 +39,6 @@ RPROMPT='[%*]'
 
 ## evals/sources
 export PATH="$HOME"/bin:"$HOME"/.cargo/bin:"$HOME"/.local/bin:$GOPATH/bin:$PATH
-source ~/.api_keys
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
 [[ -f "$HOME"/.zsh_aliases ]] && source "$HOME"/.zsh_aliases
