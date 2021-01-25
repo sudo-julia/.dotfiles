@@ -64,7 +64,7 @@ set shiftwidth=4
 set noexpandtab
 
 " some tab settings
-set showmatch
+set showmatch " when a bracket is inserted, briefly jump to the matching one
 set smarttab 
 set smartindent
 "set autoindent
@@ -81,21 +81,22 @@ let mapleader = ","
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 " basic quality of life improvements
-set encoding=utf-8
-set ignorecase
-set number
-set relativenumber
-set ruler
-set showcmd
-set smartcase
-set so=2
-set spell
-set wildmenu
-syntax on
+set backupcopy=yes " preserve file creation time
+set encoding=utf-8 " set character encoding
+set ignorecase " ignore case in search patterns
+set number " print line number
+set relativenumber " print line number relative to current line
+set ruler " show line and column number of cursor
+set showcmd " show partial command in last line of screen
+set smartcase " override 'ignorecase' if the string contains capital letters
+set so=2 " minimum number of lines to keep around the cursor
+set spell " spell checking
+set wildmenu " better command-line completions
+syntax on " syntax highlighting (surprise)
 
-" mappings
+"" mappings
+" map 'jk' to escape
 imap jk <Esc>
-nmap <CR> :FZF<CR>
 nnoremap <F4> set hlsearch! hlsearch?<CR>
 nnoremap <F9> :Black<CR>
 

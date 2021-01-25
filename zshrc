@@ -4,6 +4,7 @@
 #          ___|____/_| |_|_|  \___|
 #                                     
 #
+
 ## completion options
 zstyle ':completion:*' completer _expand _complete _ignored _approximate
 zstyle ':completion:*' insert-unambiguous true
@@ -17,13 +18,13 @@ zstyle ':completion:*' squeeze-slashes true
 zstyle ':completion:*' verbose true
 zstyle ':completion:*' list-colors "${(@s.:.)LS_COLORS}"
 zstyle ':completion::complete:*' gain-privileges 1
-zstyle :compinstall filename '"$HOME"/.zshrc'
+zstyle :compinstall filename "${HOME}/.zshrc"
 autoload -Uz compinit promptinit
-compinit
+compinit -d "${HOME}/lib/zcompdump" # throw the compdump here instead of polluting $HOME
 promptinit
 
 ## history settings
-HISTFILE=~/lib/zsh_history
+HISTFILE="${HOME}/lib/zsh_history"
 HISTSIZE=15000
 SAVEHIST=15000
 
@@ -35,13 +36,15 @@ unsetopt beep
 # TODO make timestamp only appear on sent commands
 #PROMPT='%B%F{#E2D2F9}%n %2~ >> %f%b%(?..%F{red}[%?]%f) '
 PROMPT='%B%F{magenta}%n %2~%f%b %F{red}❥ %(?..[%?])%f '
-RPROMPT='[%*]'
+RPROMPT='[%D{%T}]'
+#RPROMPT='[%D{%H:%M:%S}'
 
 ## evals/sources
-export PATH="$HOME"/bin:"$HOME"/.cargo/bin:"$HOME"/.local/bin:$GOPATH/bin:$PATH
-source /usr/share/fzf/key-bindings.zsh
-source /usr/share/fzf/completion.zsh
-[[ -f "$HOME"/.zsh_aliases ]] && source "$HOME"/.zsh_aliases
+eval "$( pyenv init - )"
+export PATH="${HOME}/bin:${HOME}/.local/bin:${PATH}"
+source '/usr/share/fzf/key-bindings.zsh'
+source '/usr/share/fzf/completion.zsh'
+[[ -f "${HOME}/.zsh_aliases" ]] && source "${HOME}/.zsh_aliases"
 
 ## key bindings
 # editor mode
@@ -62,21 +65,14 @@ bindkey '^a' beginning-of-line
 bindkey '^e' end-of-line
 
 ## functions
-# use mpv as a webcam for pictures
-camera () {
-	mpv --demuxer-lavf-format=video4linux2 \
-		--demuxer-lavf-o-set=input_format=mjpeg \
-		av://vl42:/dev/video0
-}
-
 # make and change into directory
-mkcd () {
+mkcd() {
     mkdir -p -- "$1" &&
     cd -P -- "$1"
 }
 
 ## plugin management with zinit for speed
-source ~/.zinit/bin/zinit.zsh
+source "${HOME}/.zinit/bin/zinit.zsh"
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 
