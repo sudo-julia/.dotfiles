@@ -1,6 +1,6 @@
 export AUDACITY_PATH="${HOME}/lib/audacity-data"
 export BROWSER="/usr/bin/firefox"
-export EDITOR="/usr/bin/vim"
+export EDITOR="/usr/bin/nvim"
 export ELINKS_CONFDIR="${HOME}/.config/elinks"
 export _FASD_DATA="${HOME}/lib/fasd"
 export _FASD_VIMINFO="${HOME}/lib/viminfo"
