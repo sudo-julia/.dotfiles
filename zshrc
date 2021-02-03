@@ -2,8 +2,7 @@
 #          _  /  __| __ \   __| __|
 #            / \__ \ | | | |   (
 #          ___|____/_| |_|_|  \___|
-#                                     
-#
+                                     
 
 ## completion options
 zstyle ':completion:*' completer _expand _complete _ignored _approximate
@@ -50,6 +49,15 @@ source '/usr/share/fzf/completion.zsh'
 # editor mode
 bindkey -v
 
+## fzf settings
+_fzf_compgen_path() {
+	fd --hidden --follow --exclude ".git" . "$1"
+}
+
+_fzf_compgen_dir() {
+	fd --type d --hidden --follow --exclude ".git" . "$1"
+}
+
 # history fuzzy search
 autoload -U up-line-or-beginning-search down-line-or-beginning-search
 zle -N up-line-or-beginning-search 
@@ -65,6 +73,18 @@ bindkey '^a' beginning-of-line
 bindkey '^e' end-of-line
 
 ## functions
+# format and check a python file for errors (im aware it's ugly)
+pyformat() {
+	printf -- '%s %s\n' "Running 'black' on" "$1"
+	black -- "$1"
+	printf -- '%s %s\n' "Running 'flake8' on" "$1"
+	flake8 -- "$1"
+	printf -- '%s %s\n' "Running 'pylint' on" "$1"
+	pylint -- "$1"
+	printf -- '%s %s\n' "Running 'mypy' on" "$1"
+	mypy -- "$1"
+}
+
 # make and change into directory
 mkcd() {
     mkdir -p -- "$1" &&

@@ -1,28 +1,66 @@
-"""""""" nvim.init
-set nocompatible
-filetype off
+"  _      _ _        _       
+" (_)_ _ (_) |_ __ _(_)_ __  
+" | | ' \| |  _|\ V / | '  \ 
+" |_|_||_|_|\__(_)_/|_|_|_|_|
 
 """" vim plug
 call plug#begin('~/.config/nvim/plugged')
 " general vim shit
 Plug 'Konfekt/vim-CtrlXA'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neomake/neomake'
 " syntax highlighting / colorschemes
 Plug 'morhetz/gruvbox'
-Plug 'vim-syntastic/syntastic'
 Plug 'sheerun/vim-polyglot'
-"" language plugins
-" python specific
+" python plugins
 Plug 'psf/black', { 'branch': 'stable' }
 Plug 'nvie/vim-flake8'
 
 call plug#end()
 filetype plugin indent on
 
+"""" plugin settings
+"" coc settings
+set cmdheight=2 " coc.nvim: more space for displaying messages
+set hidden " coc.nvim
+set nobackup " coc.nvim
+set nowritebackup " coc.nvim
+if has("patch-8.1.1564") " coc.nvim: gives another space in number column
+	set signcolumn=number
+else
+	set signcolumn=yes
+endif
+set shortmess+=c " coc.nvim
+"set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+set updatetime=300 " coc.nvim
+
+"" neomake settings
+function! MyOnBattery()
+	if has('macunix')
+		return match(system('pmset -g batt'), "Now drawing from 'Battery Power'") != -1
+	elseif has('unix')
+		return readfile('/sys/class/power_supply/ACAD/online') == ['0']
+	endif
+	return 0
+endfunction
+
+if MyOnBattery()
+	call neomake#configure#automake('w')
+else
+	call neomake#configure#automake('nrwi', 500)
+endif
+
+"" syntastic settings
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+
 """" quality of life
 "" lets and sets
 let &t_ut='' " tell vim to draw background color
-set backupcopy=yes
+set backupcopy=yes " this probably gets overwritten by coc's settings, keep on eye on it
 set encoding=utf-8
 set ignorecase
 set number
@@ -51,28 +89,6 @@ syntax on
 highlight BadWhitespace ctermbg=red
 au BufRead,BufNewFile *.py,*.pyw match BadWhitespace /\s\+$/
 
-"""" plugin settings
-"" coc settings
-set cmdheight=2 " coc.nvim: more space for displaying messages
-set hidden " coc.nvim
-set nobackup " coc.nvim
-set nowritebackup " coc.nvim
-"if has("patch-8.1.1564") " coc.nvim: gives another space in number column
-"	set signcolumn=number
-"else
-"	set signcolumn=yes
-"endif
-set shortmess+=c " coc.nvim
-set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
-set updatetime=300 " coc.nvim
-
-
-"" syntastic settings
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
 """" language settings
 "" bash
 autocmd FileType bash setlocal shiftwidth=2 softtabstop=2 expandtab
@@ -84,6 +100,8 @@ aug i3_ft_detection
 aug end
 
 "" python
+" path to python executable
+let g:python3_host_prog = '/usr/bin/python3'
 " black
 autocmd BufWritePre *.py execute ':Black'
 " syntax highlighting
@@ -114,8 +132,8 @@ inoremap <silent><expr> <c-space> coc#refresh()
 
 " make <CR> auto-select the first completion item and \
 " notify coc.nvim to format on enter
-inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
-							\: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+"inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
+"							\: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 " use '[g' and ']g' to navigate diagnostics
 " ':CocDiagnostics' for all in current buffer
@@ -152,6 +170,9 @@ command! -nargs=? Fold :call CocAction('fold', <f-args>)
 imap jk <Esc>
 " map <F4> to toggle search highlighting
 nnoremap <F4> :set hlsearch! hlsearch?<CR>
+" map <C-y> to yank buffer to clipboard
+inoremap <C-y> <Esc>gg"+yG:wq<CR>
+nnoremap <C-y> gg"+yG:wq<CR>
 
 "" for my todo list :3
 " mark item as done

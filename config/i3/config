@@ -58,6 +58,7 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
+## workspace settings
 # workspace names
 set $ws1 "work"
 set $ws2 "games"
@@ -114,7 +115,6 @@ assign [class="Steam"] games
 assign [class="bethesda.net_launcher.exe"] games
 assign [class="VirtualBox Manager"] vbox
 assign [class="firefox"] ff
-# TODO find a way to put calcurse on 9 exclusively
 assign [class="KeePassXC"] comm
 assign [class="Signal"] comm
 
@@ -168,22 +168,25 @@ bindsym XF86AudioMicMute exec --no-startup-id amixer set Master toggle
 # start dmenu
 # bindsym $mod+d exec dmenu_run -b -fn Terminus -nb \#1e2021 -nf \#fff4e1 -sb \#6b85c2
 
-# rofi .desktop launcher
-bindsym $mod+d exec rofi -show 'drun' -i -matching 'normal' -location '0'
-
-# Launch todo list
-bindsym $mod+t exec alacritty -e nvim "${HOME}/lib/TODO.md"
-
 # Launch calcurse
 bindsym $mod+c exec alacritty -e calcurse
 
-# Search for/play youtube video
+# rofi .desktop launcher
+bindsym $mod+d exec rofi -show 'drun' -i -matching 'normal' -location '0'
+
+# launch todo list
+bindsym $mod+t exec alacritty -e nvim +3j "${HOME}/lib/TODO.md"
+
+# launch vim with the purpose of copying to the system clipboard
+bindsym $mod+v exec alacritty -e nvim +'startinsert' /dev/null
+
+# search for/play youtube video
 bindsym $mod+y exec "${HOME}/programming/sh/myyt/rofyt"
 
-# Screenshots
+# screenshots
 bindsym $mod+Shift+p exec --no-startup-id "${HOME}/bin/screenshot.sh"
 
-# Lock screen
+# lock screen
 bindsym $mod+Shift+o exec --no-startup-id i3lock-fancy-dualmonitor -p -f Source-Code-Pro
 
 # Gaps
@@ -203,6 +206,7 @@ client.urgent            #f899b9 #fbd588 #ffffff #fbd588    #707172
 # Kill the cursor!
 exec --no-startup-id unclutter 4
 focus_follows_mouse no
+mouse_warping none
 
 # Programs to run at startup
 exec --no-startup-id numlockx
