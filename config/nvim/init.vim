@@ -179,7 +179,7 @@ nnoremap <C-y> gg"+yG:wq<CR>
 let @d="ddGpf\<Space>;rX"
 nnoremap d<C-D> @dA<C-R>=strftime(" <%Y-%m-%d>")<CR><Esc>''
 " mark item as undone
-let @u="ddggpfXr\<Space>"
+let @u="ddggjpfXr\<Space>"
 nnoremap u<C-U> @uf<hD0
 " new inactive item
 let @n="O- [ ] "

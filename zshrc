@@ -28,7 +28,7 @@ HISTSIZE=15000
 SAVEHIST=15000
 
 ## misc setopt(s)
-setopt autocd extendedglob COMPLETE_ALIASES NO_CASE_GLOB
+setopt extendedglob COMPLETE_ALIASES NO_CASE_GLOB
 unsetopt beep
 
 # actual prompts
@@ -73,16 +73,9 @@ bindkey '^a' beginning-of-line
 bindkey '^e' end-of-line
 
 ## functions
-# format and check a python file for errors (im aware it's ugly)
-pyformat() {
-	printf -- '%s %s\n' "Running 'black' on" "$1"
-	black -- "$1"
-	printf -- '%s %s\n' "Running 'flake8' on" "$1"
-	flake8 -- "$1"
-	printf -- '%s %s\n' "Running 'pylint' on" "$1"
-	pylint -- "$1"
-	printf -- '%s %s\n' "Running 'mypy' on" "$1"
-	mypy -- "$1"
+# build python package
+pybuild() {
+	python3 './setup.py' sdist bdist_wheel
 }
 
 # make and change into directory

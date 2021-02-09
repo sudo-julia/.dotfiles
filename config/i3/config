@@ -151,10 +151,10 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # Change brightness
-bindsym $mod+Shift+Left exec --no-startup-id "${HOME}/bin/change-bright" --lower
-bindsym $mod+Shift+Right exec --no-startup-id "${HOME}/bin/change-bright" --raise
-bindsym $mod+Shift+Down exec --no-startup-id "${HOME}/bin/change-bright" --min
-bindsym $mod+Shift+Up exec --no-startup-id "${HOME}/bin/change-bright" --max
+bindsym $mod+Shift+Left exec --no-startup-id "${HOME}/bin/change-bright --lower"
+bindsym $mod+Shift+Right exec --no-startup-id "${HOME}/bin/change-bright --raise"
+bindsym $mod+Shift+Down exec --no-startup-id "${HOME}/bin/change-bright --min"
+bindsym $mod+Shift+Up exec --no-startup-id "${HOME}/bin/change-bright --max"
 
 # Change volume
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer set Master 5%+
@@ -175,7 +175,7 @@ bindsym $mod+c exec alacritty -e calcurse
 bindsym $mod+d exec rofi -show 'drun' -i -matching 'normal' -location '0'
 
 # launch todo list
-bindsym $mod+t exec alacritty -e nvim +3j "${HOME}/lib/TODO.md"
+bindsym $mod+t exec alacritty -e nvim "${HOME}/lib/TODO.md"
 
 # launch vim with the purpose of copying to the system clipboard
 bindsym $mod+v exec alacritty -e nvim +'startinsert' /dev/null
