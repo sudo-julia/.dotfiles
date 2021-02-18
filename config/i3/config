@@ -150,13 +150,13 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Change brightness
+# change brightness
 bindsym $mod+Shift+Left exec --no-startup-id "${HOME}/bin/change-bright --lower"
 bindsym $mod+Shift+Right exec --no-startup-id "${HOME}/bin/change-bright --raise"
 bindsym $mod+Shift+Down exec --no-startup-id "${HOME}/bin/change-bright --min"
 bindsym $mod+Shift+Up exec --no-startup-id "${HOME}/bin/change-bright --max"
 
-# Change volume
+# change volume
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer set Master 5%+
 bindsym XF86AudioLowerVolume exec --no-startup-id amixer set Master 5%-
 bindsym XF86AudioMicMute exec --no-startup-id amixer set Master toggle
@@ -168,7 +168,7 @@ bindsym XF86AudioMicMute exec --no-startup-id amixer set Master toggle
 # start dmenu
 # bindsym $mod+d exec dmenu_run -b -fn Terminus -nb \#1e2021 -nf \#fff4e1 -sb \#6b85c2
 
-# Launch calcurse
+# launch calcurse
 bindsym $mod+c exec alacritty -e calcurse
 
 # rofi .desktop launcher
@@ -182,6 +182,9 @@ bindsym $mod+v exec alacritty -e nvim +'startinsert' /dev/null
 
 # search for/play youtube video
 bindsym $mod+y exec "${HOME}/programming/sh/myyt/rofyt"
+
+# launch zathura
+bindsym $mod+z exec zathura
 
 # screenshots
 bindsym $mod+Shift+p exec --no-startup-id "${HOME}/bin/screenshot.sh"

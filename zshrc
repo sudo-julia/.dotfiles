@@ -73,7 +73,25 @@ bindkey '^a' beginning-of-line
 bindkey '^e' end-of-line
 
 ## functions
-# build python package
+# compile and run c program
+cr() {
+	if [ "${1:(-2)}" != ".c" ]; then
+		printf -- '%s%s\n' "'$1'" " is not a '.c' file."
+		return 1
+	fi
+	if [ ! -d './out' ]; then
+		mkdir './out'
+	fi
+	outfile="./out/${1:0:(-2)}"
+	if [ -z "${outfile}" ] && [ "${outfile}" -nt "$1" ]; then
+		"${outfile}"
+	else
+		gcc "$1" -o "${outfile}" \
+		&& "${outfile}"
+	fi
+	unset outfile
+}
+
 pybuild() {
 	python3 './setup.py' sdist bdist_wheel
 }

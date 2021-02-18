@@ -33,6 +33,9 @@ endif
 set shortmess+=c " coc.nvim
 "set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 set updatetime=300 " coc.nvim
+" vim-go
+let g:go_def_mode='gopls'
+let g:go_info_mode='gopls'
 
 "" neomake settings
 function! MyOnBattery()
@@ -173,6 +176,9 @@ nnoremap <F4> :set hlsearch! hlsearch?<CR>
 " map <C-y> to yank buffer to clipboard
 inoremap <C-y> <Esc>gg"+yG:wq<CR>
 nnoremap <C-y> gg"+yG:wq<CR>
+
+"" for terminal
+tnoremap <C-[> <C-\><C-n>
 
 "" for my todo list :3
 " mark item as done

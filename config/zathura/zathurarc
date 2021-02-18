@@ -1,41 +1,49 @@
-# Set keymappings for quickly adjusting zoom
-map <C-b> adjust_window best-fit
-map <C-w> adjust_window width
+# mappings
+map b adjust_window best-fit
+map s toggle_statusbar 
+map w adjust_window width
 
-# Enable copy to clipboard
+# enable copy to clipboard
 set selection-clipboard clipboard
 
-# Font
-set font "cozettevector regular 9"
+# font
+set font "monospace regular 9"
 
-# Change around the colors
-set default-bg "#1e2021"
+# change around the colors
+set default-bg "#282828"
 set default-fg "#fff4e1"
 
-set completion-bg "1e2021"
+set completion-bg "#282828"
 set completion-fg "#fff4e1"
 
 set completion-group-bg "#2b2b2b"
 set completion-group-fg "#fff4e1"
 
-set completion-highlight-bg "#9e6bb8"
-set completion-highlight-fg "#ffffff"
+set completion-highlight-bg "#e2d2f9"
+set completion-highlight-fg "#404040"
 
-set inputbar-bg "#1e2021"
+set inputbar-bg "#282828"
 set inputbar-fg "#fff4e1"
 
-set statusbar-bg "1e2021"
+set statusbar-bg "#404040"
 set statusbar-fg "#fff4e1"
 
 set highlight-color "#fbd588"
 set highlight-active-color "#fbc454"
 
-# set notification colors
+set render-loading-bg "#282828"
+set render-loading-fg "#fff4e1"
 
+# zoom
+set zoom-center true
+set zoom-step 5
 
 # zathura-specific settings
 set adjust-open width
 set continuous-hist-save true
+set guioptions
+set sandbox "normal"
+set scroll-hstep 4
 set statusbar-basename true
-set statusbar-home-tilde true
+set vertical-center true
 set window-title-page true
