@@ -102,11 +102,25 @@ aug i3_ft_detection
 	au BufNewFile,BufRead ~/.config/i3/config set filetype=i3config
 aug end
 
+"" c
+" indentation rules
+au BufNewFile,BufRead *.c,*.h
+	\ set textwidth=80
+	\ | set cindent
+	\ | set cinkeys
+	\ | set cinoptions=8
+	\ | set cinwords
+	\ | set expandtab
+	\ | set fileformat=unix
+	\ | set shiftwidth=8
+	\ | set softtabstop=8
+	\ | set tabstop=8
+
 "" python
 " path to python executable
 let g:python3_host_prog = '/usr/bin/python3'
 " black
-autocmd BufWritePre *.py execute ':Black'
+autocmd BufWritePre *.py,*.pyi execute ':Black'
 " syntax highlighting
 let g:python_highlight_all = 1
 " PEP-8 indentation

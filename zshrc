@@ -86,7 +86,7 @@ cr() {
 	if [ -z "${outfile}" ] && [ "${outfile}" -nt "$1" ]; then
 		"${outfile}"
 	else
-		gcc "$1" -o "${outfile}" \
+		cc "$1" -o "${outfile}" \
 		&& "${outfile}"
 	fi
 	unset outfile

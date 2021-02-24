@@ -1,6 +1,7 @@
 ## aliases
 alias -- -='cd -'
 alias ..='cd ..'
+alias ....=' cd ../../'
 alias :q='sudo -k && exit'
 alias :wq='sudo -k && exit'
 alias aliases='nvim ~/.zshrc && . ~/.zshrc'
@@ -34,6 +35,7 @@ else
 	alias l='ls -l'
 	alias la='ls -al'
 fi
+alias ip='ip -c'
 alias lsblk='lsblk -ip'
 alias mount='mount | column -t'
 alias mpv='mpv --vo=gpu'
