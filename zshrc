@@ -76,30 +76,36 @@ bindkey '^e' end-of-line
 # compile and run c program
 cr() {
 	if [ "${1:(-2)}" != ".c" ]; then
-		printf -- '%s%s\n' "'$1'" " is not a '.c' file."
+		printf -- '%s is not a c file.\n' "'$1'"
 		return 1
 	fi
-	if [ ! -d './out' ]; then
-		mkdir './out'
+	if [ ! -d './bin' ]; then
+		mkdir './bin'
 	fi
-	outfile="./out/${1:0:(-2)}"
+	outfile="./bin/${1:0:(-2)}"
 	if [ -z "${outfile}" ] && [ "${outfile}" -nt "$1" ]; then
 		"${outfile}"
 	else
 		cc "$1" -o "${outfile}" \
-		&& "${outfile}"
+		&& shift \
+		&& "${outfile}" "$@"
 	fi
 	unset outfile
 }
 
-pybuild() {
-	python3 './setup.py' sdist bdist_wheel
+get-audio() {
+	youtube-dl -x --audio-format best "$1"
 }
 
 # make and change into directory
 mkcd() {
     mkdir -p -- "$1" &&
     cd -P -- "$1"
+}
+
+# build python project in current dir
+pybuild() {
+	python3 './setup.py' sdist bdist_wheel
 }
 
 ## plugin management with zinit for speed

@@ -37,6 +37,7 @@ else
 fi
 alias ip='ip -c'
 alias lsblk='lsblk -ip'
+alias -- mic-test='arecord -vvv -f dat /dev/null'
 alias mount='mount | column -t'
 alias mpv='mpv --vo=gpu'
 alias p='pacman'
